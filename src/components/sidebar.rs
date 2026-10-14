@@ -19,7 +19,9 @@ pub fn Sidebar() -> impl IntoView {
                             <span>{e.years}</span>
                         </div>
                         <p class="school-program">{e.program}</p>
-                        <p class="school-faculty">"↳ "{e.faculty}</p>
+                        {e.details.iter().map(|d| view! {
+                            <p class="school-detail">"↳ "{*d}</p>
+                        }).collect_view()}
                     </div>
                 }).collect_view()}
             </Card>

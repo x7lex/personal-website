@@ -14,7 +14,8 @@ pub struct Profile {
 pub struct Education {
     pub school: &'static str,
     pub program: &'static str,
-    pub faculty: &'static str,
+    /// Lines shown under the program, each prefixed with an arrow.
+    pub details: &'static [&'static str],
     pub years: &'static str,
 }
 
@@ -36,18 +37,31 @@ pub const PROFILE: Profile = Profile {
     name: "Hadi Osmani",
     location: "Ottawa, Ontario, Canada",
     pronouns: "he/him",
-    tagline: "tech hobbyist, software intern @ daybook",
-    greeting: "👋 I'm Hadi, a tech hobbyist from Canada.",
+    tagline: "Tech enthusiast & Software Engineering Intern at Daybook",
+    greeting: "👋 I'm Hadi, a tech enthusiast from Canada.",
     readme_title: "hadirocks/README.md",
     github: "https://github.com/x7lex",
 };
 
-pub const EDUCATION: &[Education] = &[Education {
-    school: "Carleton University",
-    program: "Computer Science (Honours)",
-    faculty: "School of Computer Science",
-    years: "2026 – present",
-}];
+pub const EDUCATION: &[Education] = &[
+    Education {
+        school: "Carleton University",
+        program: "Computer Science (Honours)",
+        details: &["School of Computer Science"],
+        years: "Year 1",
+    },
+    Education {
+        school: "St. Francis Xavier High School",
+        program: "Highschool Degree",
+        details: &[
+            "2× Honour Roll (throughout 2022-2026)",
+            "Ontario Scholar",
+            "Bronze Community Service Award",
+            "Technology Student Certificate",
+        ],
+        years: "2022 – 2026",
+    },
+];
 
 pub const STACK: &[Tech] = &[
     Tech { name: "Python", icon: "python" },

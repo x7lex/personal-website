@@ -40,9 +40,9 @@ a { color: inherit; }
 
 .panel {
   display: grid;
-  grid-template-columns: 300px minmax(0, 1fr);
+  grid-template-columns: 340px minmax(0, 1fr);
   width: 100%;
-  max-width: 1000px;
+  max-width: 1040px;
   background: var(--surface);
   border: 1px solid var(--border);
 }
@@ -96,14 +96,18 @@ hr {
   opacity: 0.75;
   font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.03em;
   margin-bottom: 6px;
 }
 
 .school-head span:last-child { white-space: nowrap; }
 
 .school-program { font-weight: 500; margin-bottom: 4px; }
-.school-faculty { color: var(--accent); }
+.school-detail {
+  color: var(--accent);
+  padding-left: 2ch;
+  text-indent: -2ch;
+}
 
 /* Sections inside the panel */
 .card { padding: var(--pad); }
