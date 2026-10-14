@@ -8,7 +8,7 @@
   --surface-raised: rgb(167 175 195 / 0.08);
   --border: rgb(167 175 195 / 0.14);
   --gap: 20px;
-  --pad: 32px;
+  --pad: 28px;
 
   color-scheme: dark;
 }
@@ -90,17 +90,36 @@ hr {
   width: 100%;
   border: 0;
   border-top: 1px solid var(--border);
-  margin: 20px 0;
+  margin: 16px 0;
 }
 
-.tagline { font-size: 0.9rem; line-height: 1.6; margin-bottom: 28px; }
+.tagline { font-size: 0.85rem; color: var(--secondary); margin-top: 4px; }
+
+
+.project-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.projects { margin-bottom: 24px; }
+
+.tag {
+  color: var(--secondary);
+  opacity: 0.75;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
 
 .school {
   font-family: "JetBrains Mono", ui-monospace, monospace;
   font-size: 0.8rem;
 }
 
-.school + .school { margin-top: 22px; }
+.school + .school { margin-top: 16px; }
 
 .school-head {
   display: flex;
@@ -259,4 +278,5 @@ hr {
 }
 
 .contact .card-title { font-size: 1.15rem; }
+
 

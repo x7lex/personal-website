@@ -19,6 +19,14 @@ pub struct Education {
     pub years: &'static str,
 }
 
+pub struct Project {
+    pub name: &'static str,
+    /// Short label shown on the right, e.g. "Hackathon". Empty for none.
+    pub tag: &'static str,
+    /// Lines shown under the name, each prefixed with an arrow.
+    pub details: &'static [&'static str],
+}
+
 pub struct Tech {
     pub name: &'static str,
     /// Base name of the icon in `assets/icons/`.
@@ -60,6 +68,33 @@ pub const EDUCATION: &[Education] = &[
             "Technology Student Certificate",
         ],
         years: "2022 – 2026",
+    },
+];
+
+pub const PROJECTS: &[Project] = &[
+    Project {
+        name: "Guardia",
+        tag: "Hackathon",
+        details: &[
+            "Python (LIEF & Capstone)",
+            "Flags possible malware using static analysis",
+        ],
+    },
+    Project {
+        name: "Botcore",
+        tag: "",
+        details: &[
+            "Python (Discord, Cogs, Logging)",
+            "A ready-made base for building custom Discord bots",
+        ],
+    },
+    Project {
+        name: "Astraeus",
+        tag: "Contributed",
+        details: &[
+            "Rust + zstd",
+            "Built a compressed file system for persistent save/load",
+        ],
     },
 ];
 

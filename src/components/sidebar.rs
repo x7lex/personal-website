@@ -1,5 +1,5 @@
-use super::card::Card;
-use crate::{content::{EDUCATION, PROFILE}};
+use super::{card::Card, education::Education};
+use crate::content::{PROFILE, PROJECTS};
 use leptos::prelude::*;
 
 #[component]
@@ -10,21 +10,20 @@ pub fn Sidebar() -> impl IntoView {
             <p class="meta">{PROFILE.location}</p>
             <p class="meta">{PROFILE.pronouns}</p>
             <hr/>
-            <p class="tagline">{PROFILE.tagline}</p>
-            <Card title="Education" class="education">
-                {EDUCATION.iter().map(|e| view! {
+            <Card title="Projects" class="projects">
+                {PROJECTS.iter().map(|p| view! {
                     <div class="school">
-                        <div class="school-head">
-                            <span>{e.school}</span>
-                            <span>{e.years}</span>
+                        <div class="project-head">
+                            <p class="school-program">{p.name}</p>
+                            <span class="tag">{p.tag}</span>
                         </div>
-                        <p class="school-program">{e.program}</p>
-                        {e.details.iter().map(|d| view! {
+                        {p.details.iter().map(|d| view! {
                             <p class="school-detail">"↳ "{*d}</p>
                         }).collect_view()}
                     </div>
                 }).collect_view()}
             </Card>
+            <Education/>
         </aside>
     }
 }

@@ -9,7 +9,10 @@ pub fn Readme() -> impl IntoView {
             <div class="readme-body">
                 <img class="square-avatar" src=assets::asset("images/pfp") alt=""/>
                 <div class="readme-text">
-                    <p class="greeting">{PROFILE.greeting}</p>
+                    <div>
+                        <p class="greeting">{PROFILE.greeting}</p>
+                        <p class="tagline">{PROFILE.tagline}</p>
+                    </div>
                     <ul class="stack" aria-label="Tech stack">
                         {STACK.iter().map(|t| view! {
                             <li><Icon name=t.icon label=t.name/></li>

@@ -5,7 +5,7 @@ use leptos::prelude::*;
 #[component]
 pub fn Contact() -> impl IntoView {
     view! {
-        <Card title="Get in touch." class="contact">
+        <Card title="💬 Feel free to reach out!" class="contact">
             <div class="buttons">
                 {CONTACT.iter().map(|c| {
                     let external = c.href.starts_with("http");
