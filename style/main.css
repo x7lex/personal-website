@@ -30,105 +30,108 @@ p, h1, h2 { margin: 0; }
 a { color: inherit; }
 .muted { color: var(--secondary); }
 
-.layout {
+/* One panel holding everything, centred and sized to fit the viewport. */
+.page {
+  min-height: 100vh;
   display: grid;
-  grid-template-columns: 260px minmax(0, 1fr);
-  gap: calc(var(--gap) * 2);
-  max-width: 1040px;
-  margin: 0 auto;
-  padding: 56px 24px;
-  align-items: start;
+  place-items: center;
+  padding: 24px;
 }
 
-.content {
+.panel {
   display: grid;
-  gap: var(--gap);
+  grid-template-columns: 240px minmax(0, 1fr);
+  width: 100%;
+  max-width: 960px;
+  background: var(--surface);
+  border: 1px solid var(--border);
 }
 
-/* Sidebar */
 .sidebar {
   display: flex;
   flex-direction: column;
-  position: sticky;
-  top: 56px;
+  padding: var(--pad);
+  border-right: 1px solid var(--border);
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.content > .card + .card { border-top: 1px solid var(--border); }
+
 .avatar {
-  width: 200px;
-  height: 200px;
+  width: 128px;
+  height: 128px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--border);
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 .name {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
-.meta { color: var(--secondary); }
+.meta { color: var(--secondary); font-size: 0.9rem; }
 
 hr {
   width: 100%;
   border: 0;
   border-top: 1px solid var(--border);
-  margin: 18px 0;
+  margin: 14px 0;
 }
 
-.tagline { margin-bottom: var(--gap); }
+.tagline { font-size: 0.9rem; margin-bottom: 18px; }
 
-.school { font-size: 0.9rem; }
+.school { font-size: 0.85rem; }
 .school-name { font-weight: 600; margin-bottom: 2px; }
 
-/* Cards */
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  padding: var(--pad);
-}
+/* Sections inside the panel */
+.card { padding: var(--pad); }
+.sidebar .card { padding: 0; }
 
 .card-title {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  padding-bottom: 12px;
-  margin-bottom: 18px;
+  padding-bottom: 10px;
+  margin-bottom: 14px;
   border-bottom: 1px solid var(--border);
 }
 
 .card-title.mono {
   font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--secondary);
 }
-
-.extra { min-height: 140px; }
 
 /* README */
 .readme-body {
   display: grid;
-  grid-template-columns: 168px minmax(0, 1fr);
+  grid-template-columns: 136px minmax(0, 1fr);
   gap: var(--pad);
   align-items: stretch;
 }
 
 .square-avatar {
-  width: 168px;
-  height: 168px;
+  width: 136px;
+  height: 136px;
   object-fit: cover;
 }
 
 .readme-text {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 
 .greeting {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 600;
   line-height: 1.3;
 }
@@ -145,8 +148,8 @@ hr {
 .stack li {
   display: grid;
   place-items: center;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   background: var(--surface-raised);
   border: 1px solid var(--border);
   color: var(--secondary);
@@ -171,7 +174,7 @@ hr {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 14px 18px;
+  padding: 11px 16px;
   background: var(--surface-raised);
   border: 1px solid var(--border);
   color: var(--text);
@@ -192,8 +195,8 @@ hr {
 
 .github {
   margin-top: auto;
-  padding: 16px 20px;
-  font-size: 1.05rem;
+  padding: 12px 20px;
+  font-size: 1rem;
   font-weight: 600;
 }
 
@@ -208,13 +211,9 @@ hr {
 .buttons .wide { grid-column: 1 / -1; }
 
 @media (max-width: 760px) {
-  .layout {
-    grid-template-columns: 1fr;
-    padding: 32px 16px;
-    gap: 28px;
-  }
-  .sidebar { position: static; }
-  .avatar { width: 140px; height: 140px; }
+  .page { padding: 16px; place-items: start center; }
+  .panel { grid-template-columns: 1fr; }
+  .sidebar { border-right: 0; border-bottom: 1px solid var(--border); }
 }
 
 @media (max-width: 520px) {

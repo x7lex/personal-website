@@ -2,22 +2,21 @@ mod assets;
 mod components;
 mod content;
 
-use components::{card::Card, contact::Contact, readme::Readme, sidebar::Sidebar};
+use components::{contact::Contact, readme::Readme, sidebar::Sidebar};
 use leptos::prelude::*;
 
 #[component]
 fn App() -> impl IntoView {
     view! {
-        <main class="layout">
-            <Sidebar/>
-            <div class="content">
-                <Readme/>
-                <Contact/>
-                <Card title=content::EXTRA_PANEL_TITLE class="extra">
-                    <p class="muted">"More to come."</p>
-                </Card>
-            </div>
-        </main>
+        <div class="page">
+            <main class="panel">
+                <Sidebar/>
+                <div class="content">
+                    <Readme/>
+                    <Contact/>
+                </div>
+            </main>
+        </div>
     }
 }
 

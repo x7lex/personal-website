@@ -63,9 +63,7 @@ pub const STACK: &[Tech] = &[
 pub const CONTACT: &[ContactLink] = &[
     ContactLink { label: "LinkedIn", href: "https://www.linkedin.com/in/hadi-osmani/", icon: "linkedin", wide: false },
     ContactLink { label: "Email", href: "mailto:contact@hadi.rocks", icon: "mail", wide: false },
-    ContactLink { label: "Signal", href: "#", icon: "signal", wide: true },
-    ContactLink { label: "Book a meeting", href: "#", icon: "calendar", wide: true },
+    ContactLink { label: "Signal", href: "#", icon: "signal", wide: false },
+    ContactLink { label: "Book a meeting", href: "#", icon: "calendar", wide: false },
 ];
 
-/// Panel below the README and contact cards, waiting for content.
-pub const EXTRA_PANEL_TITLE: &str = "Coming soon";
