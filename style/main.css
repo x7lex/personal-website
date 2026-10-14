@@ -258,3 +258,51 @@ hr {
 }
 
 .contact .card-title { font-size: 1.15rem; }
+
+/* Booking modal: blurs the whole page behind it. */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgb(13 14 17 / 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 380px;
+  padding: var(--pad);
+  background: var(--background);
+  border: 1px solid var(--border);
+}
+
+.modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-head h2 { font-size: 1.15rem; font-weight: 600; }
+
+.modal-close {
+  background: none;
+  border: 0;
+  color: var(--secondary);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal-close:hover { color: var(--text); }
+.turnstile { min-height: 65px; }
+.turnstile.failed { display: none; }
+.modal .muted { font-size: 0.9rem; }
