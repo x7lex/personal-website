@@ -7,7 +7,11 @@ use leptos::prelude::*;
 
 #[component]
 fn App() -> impl IntoView {
+    let background = assets::asset("images/background")
+        .map(|url| format!("background-image: url('{url}')"));
+
     view! {
+        <div class="backdrop" style=background aria-hidden="true"></div>
         <div class="page">
             <main class="panel">
                 <Sidebar/>

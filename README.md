@@ -23,7 +23,7 @@ src/components/      Sidebar, README card, contact card, shared Card and Icon
 src/assets.rs        asset("images/pfp") -> URL, resolved by base name
 build.rs             Scans assets/ and builds that lookup table
 style/main.css       Palette (CSS variables at the top) and layout
-assets/images/       pfp (background is kept but unused)
+assets/images/       pfp, background (blurred behind the panel)
 assets/icons/        Monochrome SVG icons, tinted by CSS
 ```
 
