@@ -1,12 +1,11 @@
 use super::card::Card;
-use crate::{assets, content::{EDUCATION, PROFILE}};
+use crate::{content::{EDUCATION, PROFILE}};
 use leptos::prelude::*;
 
 #[component]
 pub fn Sidebar() -> impl IntoView {
     view! {
         <aside class="sidebar">
-            <img class="avatar" src=assets::asset("images/pfp") alt="Hadi's profile picture"/>
             <h1 class="name">{PROFILE.name}</h1>
             <p class="meta">{PROFILE.location}</p>
             <p class="meta">{PROFILE.pronouns}</p>
@@ -15,10 +14,12 @@ pub fn Sidebar() -> impl IntoView {
             <Card title="Education" class="education">
                 {EDUCATION.iter().map(|e| view! {
                     <div class="school">
-                        <p class="school-name">{e.school}</p>
-                        <p>{e.program}</p>
-                        <p class="muted">{e.faculty}</p>
-                        <p class="muted">{e.years}</p>
+                        <div class="school-head">
+                            <span>{e.school}</span>
+                            <span>{e.years}</span>
+                        </div>
+                        <p class="school-program">{e.program}</p>
+                        <p class="school-faculty">"↳ "{e.faculty}</p>
                     </div>
                 }).collect_view()}
             </Card>

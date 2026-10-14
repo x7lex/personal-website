@@ -40,9 +40,9 @@ a { color: inherit; }
 
 .panel {
   display: grid;
-  grid-template-columns: 240px minmax(0, 1fr);
+  grid-template-columns: 300px minmax(0, 1fr);
   width: 100%;
-  max-width: 960px;
+  max-width: 1000px;
   background: var(--surface);
   border: 1px solid var(--border);
 }
@@ -61,14 +61,6 @@ a { color: inherit; }
 
 .content > .card + .card { border-top: 1px solid var(--border); }
 
-.avatar {
-  width: 128px;
-  height: 128px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--border);
-  margin-bottom: 14px;
-}
 
 .name {
   font-size: 1.5rem;
@@ -89,8 +81,29 @@ hr {
 
 .tagline { font-size: 0.9rem; margin-bottom: 18px; }
 
-.school { font-size: 0.85rem; }
-.school-name { font-weight: 600; margin-bottom: 2px; }
+.school {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.8rem;
+}
+
+.school + .school { margin-top: 14px; }
+
+.school-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--secondary);
+  opacity: 0.75;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.school-head span:last-child { white-space: nowrap; }
+
+.school-program { font-weight: 500; margin-bottom: 4px; }
+.school-faculty { color: var(--accent); }
 
 /* Sections inside the panel */
 .card { padding: var(--pad); }
