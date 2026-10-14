@@ -28,6 +28,10 @@ pub struct ContactLink {
     pub label: &'static str,
     pub href: &'static str,
     pub icon: &'static str,
+    /// Extra text shown next to the label, e.g. the email address.
+    pub detail: Option<&'static str>,
+    /// Spans the full width of the contact card.
+    pub wide: bool,
 }
 
 pub const PROFILE: Profile = Profile {
@@ -59,8 +63,8 @@ pub const STACK: &[Tech] = &[
 
 // TODO: replace the "#" placeholders with real links.
 pub const CONTACT: &[ContactLink] = &[
-    ContactLink { label: "LinkedIn", href: "https://www.linkedin.com/in/hadi-osmani/", icon: "linkedin" },
-    ContactLink { label: "Email", href: "mailto:contact@hadi.rocks", icon: "mail" },
-    ContactLink { label: "Signal", href: "#", icon: "signal" },
-    ContactLink { label: "Book a meeting", href: "#", icon: "calendar" },
+    ContactLink { label: "LinkedIn", href: "https://www.linkedin.com/in/hadi-osmani/", icon: "linkedin", detail: None, wide: false },
+    ContactLink { label: "Email", href: "mailto:contact@hadi.rocks", icon: "mail", detail: Some("contact@hadi.rocks"), wide: false },
+    ContactLink { label: "Signal", href: "#", icon: "signal", detail: None, wide: true },
+    ContactLink { label: "Book a meeting", href: "#", icon: "calendar", detail: None, wide: true },
 ];

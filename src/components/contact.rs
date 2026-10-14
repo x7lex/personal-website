@@ -12,11 +12,13 @@ pub fn Contact() -> impl IntoView {
                     view! {
                         <a
                             class="button"
+                            class:wide=c.wide
                             href=c.href
                             target=external.then_some("_blank")
                             rel=external.then_some("noopener")
                         >
                             <Icon name=c.icon/>{c.label}
+                            {c.detail.map(|d| view! { <span class="button-detail">{d}</span> })}
                         </a>
                     }
                 }).collect_view()}

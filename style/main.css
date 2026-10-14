@@ -204,6 +204,20 @@ hr {
 
 .button:hover { background: var(--accent); }
 .button.primary { background: var(--accent); }
+.contact .buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.contact .button { justify-content: center; padding: 14px 16px; }
+.contact .button.wide { grid-column: 1 / -1; }
+
+.button-detail {
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
 .button.primary:hover { background: var(--primary); color: var(--background); }
 
 .button:focus-visible {
@@ -219,6 +233,7 @@ hr {
   }
   .sidebar { position: static; }
   .avatar { width: 140px; height: 140px; }
+  .contact .buttons { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
