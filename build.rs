@@ -1,9 +1,6 @@
 //! Scans `assets/` and maps each file's base name (path without extension) to
 //! the file that actually exists, so code asks for "images/background" and gets
 //! background.png, .jpg, .jpeg or .webp, whichever is present.
-//!
-//! It also passes the public Turnstile site key from `.env` (`SITEKEY`) to the
-//! app. Only the site key is read; the secret key never ends up in the bundle.
 
 use std::{env, fs, path::Path};
 
@@ -12,12 +9,6 @@ const PREFERENCE: &[&str] = &["svg", "webp", "avif", "png", "jpg", "jpeg", "gif"
 
 fn main() {
     println!("cargo:rerun-if-changed=assets");
-    println!("cargo:rerun-if-changed=.env");
-    println!("cargo:rerun-if-env-changed=SITEKEY");
-
-    if let Some(key) = env::var("SITEKEY").ok().or_else(|| dotenv_value("SITEKEY")) {
-        println!("cargo:rustc-env=TURNSTILE_SITE_KEY={key}");
-    }
 
     let mut entries: Vec<(String, String)> = Vec::new();
     collect(Path::new("assets"), &mut entries);
@@ -58,11 +49,3 @@ fn collect(dir: &Path, entries: &mut Vec<(String, String)>) {
     }
 }
 
-/// Reads one `KEY=value` line from `.env`, ignoring the rest of the file.
-fn dotenv_value(name: &str) -> Option<String> {
-    let file = fs::read_to_string(".env").ok()?;
-    file.lines().find_map(|line| {
-        let (key, value) = line.split_once('=')?;
-        (key.trim() == name).then(|| value.trim().trim_matches(['"', '\'']).to_string())
-    })
-}

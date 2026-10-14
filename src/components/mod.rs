@@ -1,4 +1,3 @@
-pub mod booking;
 pub mod card;
 pub mod contact;
 pub mod icon;

@@ -31,8 +31,6 @@ pub struct ContactLink {
     pub icon: &'static str,
     /// Spans the full width of the contact card.
     pub wide: bool,
-    /// Asks for a Turnstile check in a modal before sending the visitor on.
-    pub gated: bool,
 }
 
 pub const PROFILE: Profile = Profile {
@@ -76,9 +74,9 @@ pub const STACK: &[Tech] = &[
 ];
 
 pub const CONTACT: &[ContactLink] = &[
-    ContactLink { label: "LinkedIn", href: "https://www.linkedin.com/in/hadi-osmani/", icon: "linkedin", wide: false, gated: false },
-    ContactLink { label: "Email", href: "mailto:contact@hadi.rocks", icon: "mail", wide: false, gated: false },
-    ContactLink { label: "Signal", href: "https://signal.me/#eu/Li5oLbM3sx28t_UTMs31C4euBL6At56NU4YwcPdLbLMuryuXdGpJTqebgxHRpE89", icon: "signal", wide: true, gated: false },
-    ContactLink { label: "Book a meeting", href: "https://cal.com/hadi-osmani", icon: "calendar", wide: true, gated: true },
+    ContactLink { label: "LinkedIn", href: "https://www.linkedin.com/in/hadi-osmani/", icon: "linkedin", wide: false },
+    ContactLink { label: "Email", href: "mailto:contact@hadi.rocks", icon: "mail", wide: false },
+    ContactLink { label: "Signal", href: "https://signal.me/#eu/Li5oLbM3sx28t_UTMs31C4euBL6At56NU4YwcPdLbLMuryuXdGpJTqebgxHRpE89", icon: "signal", wide: true },
+    ContactLink { label: "Book a meeting", href: "https://cal.com/hadi-osmani", icon: "calendar", wide: true },
 ];
 
