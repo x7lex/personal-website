@@ -8,7 +8,7 @@
   --surface-raised: rgb(167 175 195 / 0.08);
   --border: rgb(167 175 195 / 0.14);
   --gap: 20px;
-  --pad: 28px;
+  --pad: 26px;
 
   color-scheme: dark;
 }
@@ -22,7 +22,7 @@ html, body {
   min-height: 100%;
   color: var(--text);
   font-family: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -53,9 +53,9 @@ a { color: inherit; }
 
 .panel {
   display: grid;
-  grid-template-columns: 370px minmax(0, 1fr);
+  grid-template-columns: 340px minmax(0, 1fr);
   width: 100%;
-  max-width: 1100px;
+  max-width: 980px;
   background: rgb(13 14 17 / 0.82);
   border: 1px solid var(--border);
   backdrop-filter: blur(6px);
@@ -280,3 +280,21 @@ hr {
 .contact .card-title { font-size: 1.15rem; }
 
 
+
+/* Braille dot art filling the space under the contact card. */
+.cats {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0 var(--pad) var(--pad);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 13px;
+  line-height: 1.1;
+  color: var(--secondary);
+  opacity: 0.8;
+}
+
+@media (max-width: 760px) {
+  .cats { display: none; }
+}

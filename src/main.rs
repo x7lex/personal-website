@@ -18,6 +18,7 @@ fn App() -> impl IntoView {
                 <div class="content">
                     <Readme/>
                     <Contact/>
+                    <pre class="cats" aria-hidden="true">{include_str!("art/sleeping-cats.txt")}</pre>
                 </div>
             </main>
         </div>

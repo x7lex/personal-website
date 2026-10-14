@@ -81,14 +81,6 @@ pub const PROJECTS: &[Project] = &[
         ],
     },
     Project {
-        name: "Botcore",
-        tag: "",
-        details: &[
-            "Python (Discord, Cogs, Logging)",
-            "A ready-made base for building custom Discord bots",
-        ],
-    },
-    Project {
         name: "Astraeus",
         tag: "Contributed",
         details: &[
