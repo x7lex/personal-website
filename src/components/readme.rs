@@ -1,0 +1,25 @@
+use super::{card::Card, icon::Icon};
+use crate::{assets, content::{PROFILE, STACK}};
+use leptos::prelude::*;
+
+#[component]
+pub fn Readme() -> impl IntoView {
+    view! {
+        <Card title=PROFILE.readme_title mono=true class="readme">
+            <div class="readme-body">
+                <img class="square-avatar" src=assets::asset("images/pfp") alt=""/>
+                <div class="readme-text">
+                    <p class="greeting">{PROFILE.greeting}</p>
+                    <ul class="stack" aria-label="Tech stack">
+                        {STACK.iter().map(|t| view! {
+                            <li><Icon name=t.icon label=t.name/></li>
+                        }).collect_view()}
+                    </ul>
+                </div>
+            </div>
+            <a class="button primary" href=PROFILE.github target="_blank" rel="noopener">
+                <Icon name="github"/>"GitHub"
+            </a>
+        </Card>
+    }
+}

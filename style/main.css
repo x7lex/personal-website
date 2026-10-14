@@ -1,0 +1,231 @@
+:root {
+  --text: #ebebf1;
+  --background: #0f1018;
+  --accent: #565aab;
+  --primary: #a2a4c8;
+  --secondary: #383b68;
+
+  --surface: rgb(56 59 104 / 0.22);
+  --border: rgb(162 164 200 / 0.16);
+  --radius: 14px;
+  --gap: 20px;
+
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--background);
+  color: var(--text);
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+p, h1, h2 { margin: 0; }
+a { color: inherit; }
+
+/* Faint artwork behind everything, tinted into the background colour. */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.07;
+  filter: grayscale(1);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: calc(var(--gap) * 2);
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 56px 24px;
+  align-items: start;
+}
+
+.content {
+  display: grid;
+  gap: var(--gap);
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: sticky;
+  top: 56px;
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--secondary);
+  margin-bottom: 14px;
+}
+
+.name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--primary);
+}
+
+hr {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 14px 0;
+}
+
+.tagline { margin-bottom: 18px; }
+
+.school {
+  display: flex;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+.school .icon { margin-top: 3px; color: var(--primary); flex-shrink: 0; }
+.school-name { font-weight: 600; }
+.muted { color: var(--primary); }
+
+/* Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  backdrop-filter: blur(6px);
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.card-title.mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.85rem;
+  color: var(--primary);
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 18px;
+}
+
+.readme-body {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.square-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.greeting {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.stack li {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+.stack .icon { width: 22px; height: 22px; }
+
+/* Icons are monochrome SVGs used as masks, so they follow `color`. */
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: var(--secondary);
+  color: var(--text);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.button:hover { background: var(--accent); }
+.button.primary { background: var(--accent); }
+.button.primary:hover { background: var(--primary); color: var(--background); }
+
+.button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+@media (max-width: 760px) {
+  .layout {
+    grid-template-columns: 1fr;
+    padding: 32px 16px;
+    gap: 28px;
+  }
+  .sidebar { position: static; }
+  .avatar { width: 140px; height: 140px; }
+}
+
+@media (max-width: 480px) {
+  .readme-body { flex-direction: column; align-items: flex-start; }
+  .square-avatar { width: 96px; height: 96px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button { transition: none; }
+}
