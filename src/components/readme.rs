@@ -15,11 +15,11 @@ pub fn Readme() -> impl IntoView {
                             <li><Icon name=t.icon label=t.name/></li>
                         }).collect_view()}
                     </ul>
+                    <a class="button primary github" href=PROFILE.github target="_blank" rel="noopener">
+                        <Icon name="github"/>"GitHub"
+                    </a>
                 </div>
             </div>
-            <a class="button primary" href=PROFILE.github target="_blank" rel="noopener">
-                <Icon name="github"/>"GitHub"
-            </a>
         </Card>
     }
 }

@@ -18,7 +18,6 @@ pub fn Contact() -> impl IntoView {
                             rel=external.then_some("noopener")
                         >
                             <Icon name=c.icon/>{c.label}
-                            {c.detail.map(|d| view! { <span class="button-detail">{d}</span> })}
                         </a>
                     }
                 }).collect_view()}

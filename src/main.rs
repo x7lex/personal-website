@@ -2,21 +2,20 @@ mod assets;
 mod components;
 mod content;
 
-use components::{contact::Contact, readme::Readme, sidebar::Sidebar};
+use components::{card::Card, contact::Contact, readme::Readme, sidebar::Sidebar};
 use leptos::prelude::*;
 
 #[component]
 fn App() -> impl IntoView {
-    let background = assets::asset("images/background")
-        .map(|url| format!("background-image: url('{url}')"));
-
     view! {
-        <div class="backdrop" style=background aria-hidden="true"></div>
         <main class="layout">
             <Sidebar/>
             <div class="content">
                 <Readme/>
                 <Contact/>
+                <Card title=content::EXTRA_PANEL_TITLE class="extra">
+                    <p class="muted">"More to come."</p>
+                </Card>
             </div>
         </main>
     }
