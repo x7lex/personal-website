@@ -1,6 +1,6 @@
 use leptos::prelude::*;
 
-/// A titled panel. `mono` renders the title like a file name.
+/// A titled panel. `mono` renders the title like a file name
 #[component]
 pub fn Card(
     title: &'static str,

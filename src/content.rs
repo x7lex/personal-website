@@ -1,5 +1,5 @@
 //! Everything the page says lives here. Add or change entries and the
-//! components pick them up.
+//! components pick them up
 
 pub struct Profile {
     pub name: &'static str,
@@ -14,22 +14,22 @@ pub struct Profile {
 pub struct Education {
     pub school: &'static str,
     pub program: &'static str,
-    /// Lines shown under the program, each prefixed with an arrow.
+    /// Lines shown under the program, each prefixed with an arrow
     pub details: &'static [&'static str],
     pub years: &'static str,
 }
 
 pub struct Project {
     pub name: &'static str,
-    /// Short label shown on the right, e.g. "Hackathon". Empty for none.
+    /// Short label shown on the right, e.g. "Hackathon". Empty for none
     pub tag: &'static str,
-    /// Lines shown under the name, each prefixed with an arrow.
+    /// Lines shown under the name, each prefixed with an arrow
     pub details: &'static [&'static str],
 }
 
 pub struct Tech {
     pub name: &'static str,
-    /// Base name of the icon in `assets/icons/`.
+    /// Base name of the icon in `assets/icons/`
     pub icon: &'static str,
 }
 
@@ -37,7 +37,7 @@ pub struct ContactLink {
     pub label: &'static str,
     pub href: &'static str,
     pub icon: &'static str,
-    /// Spans the full width of the contact card.
+    /// Spans the full width of the contact card
     pub wide: bool,
 }
 
@@ -86,6 +86,14 @@ pub const PROJECTS: &[Project] = &[
         details: &[
             "Rust + zstd",
             "Built a compressed file system for persistent save/load",
+        ],
+    },
+    Project {
+        name: "Botcore",
+        tag: "",
+        details: &[
+            "Python (Discord, Cogs, Logging)",
+            "A ready-made base for building custom Discord bots",
         ],
     },
 ];
