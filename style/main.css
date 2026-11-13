@@ -296,17 +296,36 @@ a { color: inherit; }
 
 .buttons .wide { grid-column: 1 / -1; }
 
+/* Phones: one edge-to-edge sheet. The two columns are unwrapped with
+   `display: contents` so the intro (name, README) comes before projects. */
 @media (max-width: 760px) {
-  :root { --pad: 22px; }
-  .page { padding: 16px; place-items: start center; }
-  .panel { grid-template-columns: 1fr; }
-  .sidebar { border-right: 0; border-bottom: 1px solid var(--border); }
-}
+  .page { padding: 0; place-items: stretch; }
+  .panel { display: flex; flex-direction: column; max-width: none; min-height: 100vh; border: 0; }
+  .sidebar, .content { display: contents; }
 
-@media (max-width: 520px) {
-  .readme-body { grid-template-columns: 1fr; }
-  .square-avatar { width: 112px; height: 112px; }
-  .buttons { grid-template-columns: 1fr; }
+  .name { order: 1; padding: 32px var(--pad) 0; margin-bottom: 6px; font-size: 1.75rem; }
+  .meta { order: 2; padding: 0 var(--pad); }
+  .sidebar > .meta:last-of-type { padding-bottom: 24px; }
+  .readme { order: 3; }
+  .projects { order: 4; margin: 0; }
+  .education { order: 5; }
+  .contact { order: 6; }
+  .cats { order: 7; }
+
+  .sidebar .card { padding: var(--pad); }
+  .readme, .projects, .education, .contact { border-top: 1px solid var(--border); }
+
+  /* README: avatar beside the greeting, languages full width underneath */
+  .readme-body { grid-template-columns: 88px minmax(0, 1fr); gap: 16px; align-items: center; }
+  .readme-text { display: contents; }
+  .square-avatar { width: 88px; height: 88px; }
+  .greeting { font-size: 1.05rem; }
+  .langs { grid-column: 1 / -1; margin-top: 4px; }
+
+  /* Contact: 2 × 2 */
+  .buttons { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .buttons .wide { grid-column: auto; }
+  .contact .button { padding: 14px; gap: 10px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -354,6 +373,7 @@ a { color: inherit; }
   opacity: 0.8;
 }
 
+/* On phones the cats are a small sign-off at the end of the page */
 @media (max-width: 760px) {
-  .cats { display: none; }
+  .cats { font-size: 11px; padding: 8px var(--pad) 40px; opacity: 0.5; }
 }
