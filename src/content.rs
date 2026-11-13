@@ -29,8 +29,9 @@ pub struct Project {
 
 pub struct Tech {
     pub name: &'static str,
-    /// Base name of the icon in `assets/icons/`
-    pub icon: &'static str,
+    /// Colour of the square shown before the name. Mostly brand colours,
+    /// lightened where the real one disappears on the dark panel
+    pub color: &'static str,
 }
 
 pub struct ContactLink {
@@ -99,13 +100,15 @@ pub const PROJECTS: &[Project] = &[
 ];
 
 pub const STACK: &[Tech] = &[
-    Tech { name: "Python", icon: "python" },
-    Tech { name: "Rust", icon: "rust" },
-    Tech { name: "WebAssembly", icon: "webassembly" },
-    Tech { name: "Linux", icon: "linux" },
-    Tech { name: "Git", icon: "git" },
-    Tech { name: "VS Code", icon: "vscode" },
-    Tech { name: "Claude", icon: "claude" },
+    Tech { name: "Rust", color: "#e8b48f" },
+    Tech { name: "Python", color: "#5b9bd5" },
+    Tech { name: "WebAssembly", color: "#654ff0" },
+    Tech { name: "Java", color: "#ed8b00" },
+    Tech { name: "Git", color: "#f05032" },
+    Tech { name: "Bash", color: "#4eaa25" },
+    Tech { name: "Codium", color: "#2f80ed" },
+    Tech { name: "Neovim", color: "#57a143" },
+    Tech { name: "Claude", color: "#d97757" },
 ];
 
 pub const CONTACT: &[ContactLink] = &[
