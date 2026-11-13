@@ -17,7 +17,9 @@ pub fn Contact() -> impl IntoView {
                             target=external.then_some("_blank")
                             rel=external.then_some("noopener")
                         >
-                            <Icon name=c.icon/>{c.label}
+                            <Icon name=c.icon/>
+                            <span>{c.label}</span>
+                            <span class="go" aria-hidden="true">"↗"</span>
                         </a>
                     }
                 }).collect_view()}
