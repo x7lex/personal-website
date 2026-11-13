@@ -18,13 +18,15 @@ trunk build --release   # output in dist/
 ## Where things are
 
 ```text
-src/content.rs       All text, links, education and tech stack (edit here)
+src/content.rs       All text, links, education and projects (edit here)
+src/languages.rs     Language breakdown, regenerated weekly (don't edit)
 src/components/      Sidebar, README card, contact card, shared Card and Icon
 src/assets.rs        asset("images/pfp") -> URL, resolved by base name
 build.rs             Scans assets/ and builds that lookup table
 style/main.css       Palette (CSS variables at the top) and layout
 assets/images/       pfp, background (blurred behind the panel)
 assets/icons/        Monochrome SVG icons, tinted by CSS
+scripts/             update_languages.py, run by .github/workflows/languages.yml
 ```
 
 ## Swapping assets
@@ -37,3 +39,11 @@ jpeg, gif. `trunk serve` picks up the change on its own.
 Icons in `assets/icons/` are used as CSS masks, so any single-colour SVG works
 and takes the surrounding text colour. Add one, then reference it by name in
 `src/content.rs`.
+
+## Language breakdown
+
+`.github/workflows/languages.yml` runs every Monday (or by hand from the
+Actions tab). It sums GitHub's per-language byte counts over the public,
+non-fork, non-archived repos on x7lex, rewrites `src/languages.rs`, and commits
+it if anything changed. Colours, the number of languages shown and excluded
+repos are at the top of `scripts/update_languages.py`.
