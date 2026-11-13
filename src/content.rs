@@ -4,7 +4,7 @@
 pub struct Profile {
     pub name: &'static str,
     pub location: &'static str,
-    pub pronouns: &'static str,
+    pub characteristics: &'static str,
     pub tagline: &'static str,
     pub greeting: &'static str,
     pub readme_title: &'static str,
@@ -44,9 +44,9 @@ pub struct ContactLink {
 pub const PROFILE: Profile = Profile {
     name: "Hadi Osmani",
     location: "Ottawa, Ontario, Canada",
-    pronouns: "he/him",
-    tagline: "Tech enthusiast & Software Engineering Intern at Daybook",
-    greeting: "👋 I'm Hadi, a tech enthusiast from Canada.",
+    characteristics: "he/him · 18 years old",
+    tagline: "Software Engineering Intern at Daybook Health",
+    greeting: "👋 I'm Hadi, a tech enthusiast from Canada 🇨🇦",
     readme_title: "hadirocks/README.md",
     github: "https://github.com/x7lex",
 };
