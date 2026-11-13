@@ -19,7 +19,7 @@ trunk build --release   # output in dist/
 
 ```text
 src/content.rs       All text, links, education and projects (edit here)
-src/languages.rs     Language breakdown, regenerated weekly (don't edit)
+src/languages.rs     Language breakdown and star count, regenerated weekly
 src/components/      Sidebar, README card, contact card, shared Card and Icon
 src/assets.rs        asset("images/pfp") -> URL, resolved by base name
 build.rs             Scans assets/ and builds that lookup table
@@ -44,6 +44,7 @@ and takes the surrounding text colour. Add one, then reference it by name in
 
 `.github/workflows/languages.yml` runs every Monday (or by hand from the
 Actions tab). It sums GitHub's per-language byte counts over the public,
-non-fork, non-archived repos on x7lex, rewrites `src/languages.rs`, and commits
-it if anything changed. Colours, the number of languages shown and excluded
+non-fork, non-archived repos on x7lex, counts the stars on all public repos
+(like the shields.io badge), rewrites `src/languages.rs`, and commits it if
+anything changed. Colours, the number of languages shown and excluded
 repos are at the top of `scripts/update_languages.py`.

@@ -4,7 +4,7 @@
 use crate::content::Language;
 
 /// Shown above the language bar
-pub const LANGUAGES_CAPTION: &str = "languages · 7 public repos";
+pub const LANGUAGES_CAPTION: &str = "languages · 7 public repos · 19 stars";
 
 pub const LANGUAGES: &[Language] = &[
     Language { name: "Python", share: 68.9, color: "#e8c547" },
