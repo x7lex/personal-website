@@ -1,9 +1,15 @@
-use super::{card::Card, icon::Icon};
-use crate::{assets, content::{PROFILE, STACK}};
+use super::card::Card;
+use crate::{assets, content::{LANGUAGES, LANGUAGES_CAPTION, PROFILE}};
 use leptos::prelude::*;
 
 #[component]
 pub fn Readme() -> impl IntoView {
+    let summary = LANGUAGES
+        .iter()
+        .map(|l| format!("{} {:.1}%", l.name, l.share))
+        .collect::<Vec<_>>()
+        .join(", ");
+
     view! {
         <Card title=PROFILE.readme_title mono=true class="readme">
             <div class="readme-body">
@@ -13,14 +19,25 @@ pub fn Readme() -> impl IntoView {
                         <p class="greeting">{PROFILE.greeting}</p>
                         <p class="tagline">{PROFILE.tagline}</p>
                     </div>
-                    <ul class="stack" aria-label="Tech stack">
-                        {STACK.iter().map(|t| view! {
-                            <li style=format!("--swatch: {}", t.color)>{t.name}</li>
-                        }).collect_view()}
-                    </ul>
-                    <a class="button primary github" href=PROFILE.github target="_blank" rel="noopener">
-                        <Icon name="github"/>"GitHub"
-                    </a>
+                    <div class="langs">
+                        <p class="langs-caption">{LANGUAGES_CAPTION}</p>
+                        <div class="langs-bar" role="img" aria-label=format!("Languages: {summary}")>
+                            {LANGUAGES.iter().map(|l| view! {
+                                <span
+                                    style=format!("--swatch: {}; flex-grow: {}", l.color, l.share)
+                                    title=format!("{} {:.1}%", l.name, l.share)
+                                ></span>
+                            }).collect_view()}
+                        </div>
+                        <ul class="langs-legend" aria-hidden="true">
+                            {LANGUAGES.iter().map(|l| view! {
+                                <li style=format!("--swatch: {}", l.color)>
+                                    {l.name}
+                                    <span class="share">{format!("{:.1}%", l.share)}</span>
+                                </li>
+                            }).collect_view()}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </Card>

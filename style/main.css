@@ -190,33 +190,63 @@ hr {
   line-height: 1.3;
 }
 
-/* Tech stack: a monospace list, each name led by a square in its brand colour */
-.stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 18px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* Language breakdown: one segmented bar, then a legend with a square per language */
+.langs {
+  display: grid;
+  gap: 10px;
   font-family: "JetBrains Mono", ui-monospace, monospace;
   font-size: 0.8rem;
-  line-height: 1.6;
   color: var(--secondary);
 }
 
-.stack li {
+.langs-caption {
+  font-size: 0.72rem;
+  opacity: 0.7;
+  letter-spacing: 0.02em;
+}
+
+.langs-bar {
+  display: flex;
+  gap: 2px;
+  height: 8px;
+}
+
+.langs-bar span {
+  min-width: 3px;
+  background: color-mix(in oklab, var(--swatch) 90%, white);
+  transition: filter 0.15s ease;
+}
+
+.langs-bar span:hover { filter: brightness(1.25); }
+
+.langs-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.langs-legend li {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   text-transform: lowercase;
 }
 
-.stack li::before {
+.langs-legend li::before {
   content: "";
   width: 8px;
   height: 8px;
   flex-shrink: 0;
-  background: color-mix(in oklab, var(--swatch) 85%, white);
+  background: color-mix(in oklab, var(--swatch) 90%, white);
+}
+
+.langs-legend .share {
+  color: var(--text);
+  opacity: 0.55;
+  font-variant-numeric: tabular-nums;
 }
 
 /* Icons are monochrome SVGs used as masks, so they follow `color`. */
@@ -286,7 +316,7 @@ hr {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .button { transition: none; }
+  .button, .langs-bar span { transition: none; }
 }
 
 .contact .card-title { font-size: 1.15rem; }

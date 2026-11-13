@@ -8,6 +8,8 @@ pub struct Profile {
     pub tagline: &'static str,
     pub greeting: &'static str,
     pub readme_title: &'static str,
+    /// Not shown right now; the GitHub button is coming back later
+    #[allow(dead_code)]
     pub github: &'static str,
 }
 
@@ -27,10 +29,11 @@ pub struct Project {
     pub details: &'static [&'static str],
 }
 
-pub struct Tech {
+pub struct Language {
     pub name: &'static str,
-    /// Colour of the square shown before the name. Mostly brand colours,
-    /// lightened where the real one disappears on the dark panel
+    /// Share of the code in public repos, in percent. The shares add up to 100
+    pub share: f32,
+    /// Colour of the language's bar segment and legend square
     pub color: &'static str,
 }
 
@@ -99,16 +102,17 @@ pub const PROJECTS: &[Project] = &[
     },
 ];
 
-pub const STACK: &[Tech] = &[
-    Tech { name: "Rust", color: "#e8b48f" },
-    Tech { name: "Python", color: "#5b9bd5" },
-    Tech { name: "WebAssembly", color: "#654ff0" },
-    Tech { name: "Java", color: "#ed8b00" },
-    Tech { name: "Git", color: "#f05032" },
-    Tech { name: "Bash", color: "#4eaa25" },
-    Tech { name: "Codium", color: "#2f80ed" },
-    Tech { name: "Neovim", color: "#57a143" },
-    Tech { name: "Claude", color: "#d97757" },
+/// Shown above the language bar
+pub const LANGUAGES_CAPTION: &str = "languages · 7 public repos";
+
+/// Bytes of code per language across the public, non-fork repos on
+/// github.com/x7lex, measured 2026-11-13. Update by hand when it drifts
+pub const LANGUAGES: &[Language] = &[
+    Language { name: "Python", share: 68.9, color: "#e8c547" },
+    Language { name: "Rust", share: 15.8, color: "#dea584" },
+    Language { name: "TypeScript", share: 7.3, color: "#5a9be6" },
+    Language { name: "CSS", share: 7.2, color: "#a77bdc" },
+    Language { name: "Other", share: 0.8, color: "#6b7280" },
 ];
 
 pub const CONTACT: &[ContactLink] = &[
