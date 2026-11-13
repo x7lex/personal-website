@@ -310,10 +310,33 @@ a { color: inherit; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .button, .langs-bar span { transition: none; }
+  .button, .langs-bar span, .contact .go { transition: none; }
 }
 
 .contact .card-title { font-size: 1.15rem; }
+
+/* Contact links: icon and label on the left so the icons line up, ↗ on the right */
+.contact .button {
+  justify-content: flex-start;
+  gap: 14px;
+}
+
+.contact .button .icon { width: 20px; height: 20px; }
+
+.contact .go {
+  margin-left: auto;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 1rem;
+  color: var(--secondary);
+  opacity: 0.6;
+  transition: transform 0.15s ease, opacity 0.15s ease, color 0.15s ease;
+}
+
+.contact .button:hover .go {
+  opacity: 1;
+  color: #fff;
+  transform: translate(2px, -2px);
+}
 
 
 
