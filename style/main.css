@@ -90,13 +90,6 @@ a { color: inherit; }
 
 .meta { color: var(--secondary); font-size: 0.9rem; line-height: 1.6; }
 
-hr {
-  width: 100%;
-  border: 0;
-  border-top: 1px solid var(--border);
-  margin: 16px 0;
-}
-
 .tagline { font-size: 0.85rem; color: var(--secondary); margin-top: 4px; }
 
 
@@ -107,7 +100,8 @@ hr {
   gap: 8px;
 }
 
-.projects { margin-bottom: 24px; }
+/* Same gap above Projects as between Projects and Education */
+.projects { margin: 24px 0; }
 
 .tag {
   color: var(--secondary);

@@ -1,5 +1,9 @@
 use super::card::Card;
-use crate::{assets, content::{LANGUAGES, LANGUAGES_CAPTION, PROFILE}};
+use crate::{
+    assets,
+    content::PROFILE,
+    languages::{LANGUAGES, LANGUAGES_CAPTION},
+};
 use leptos::prelude::*;
 
 #[component]

@@ -102,19 +102,6 @@ pub const PROJECTS: &[Project] = &[
     },
 ];
 
-/// Shown above the language bar
-pub const LANGUAGES_CAPTION: &str = "languages · 7 public repos";
-
-/// Bytes of code per language across the public, non-fork repos on
-/// github.com/x7lex, measured 2026-11-13. Update by hand when it drifts
-pub const LANGUAGES: &[Language] = &[
-    Language { name: "Python", share: 68.9, color: "#e8c547" },
-    Language { name: "Rust", share: 15.8, color: "#dea584" },
-    Language { name: "TypeScript", share: 7.3, color: "#5a9be6" },
-    Language { name: "CSS", share: 7.2, color: "#a77bdc" },
-    Language { name: "Other", share: 0.8, color: "#6b7280" },
-];
-
 pub const CONTACT: &[ContactLink] = &[
     ContactLink { label: "LinkedIn", href: "https://www.linkedin.com/in/hadi-osmani/", icon: "linkedin", wide: false },
     ContactLink { label: "Email", href: "mailto:contact@hadi.rocks", icon: "mail", wide: false },

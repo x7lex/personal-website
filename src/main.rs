@@ -1,6 +1,7 @@
 mod assets;
 mod components;
 mod content;
+mod languages;
 
 use components::{contact::Contact, readme::Readme, sidebar::Sidebar};
 use leptos::prelude::*;
