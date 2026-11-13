@@ -15,7 +15,7 @@ pub fn Readme() -> impl IntoView {
                     </div>
                     <ul class="stack" aria-label="Tech stack">
                         {STACK.iter().map(|t| view! {
-                            <li><Icon name=t.icon label=t.name/></li>
+                            <li style=format!("--swatch: {}", t.color)>{t.name}</li>
                         }).collect_view()}
                     </ul>
                     <a class="button primary github" href=PROFILE.github target="_blank" rel="noopener">
