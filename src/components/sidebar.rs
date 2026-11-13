@@ -9,7 +9,6 @@ pub fn Sidebar() -> impl IntoView {
             <h1 class="name">{PROFILE.name}</h1>
             <p class="meta">{PROFILE.location}</p>
             <p class="meta">{PROFILE.characteristics}</p>
-            <hr/>
             <Card title="Projects" class="projects">
                 {PROJECTS.iter().map(|p| view! {
                     <div class="school">
