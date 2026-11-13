@@ -106,6 +106,6 @@ pub const CONTACT: &[ContactLink] = &[
     ContactLink { label: "LinkedIn", href: "https://www.linkedin.com/in/hadi-osmani/", icon: "linkedin", wide: false },
     ContactLink { label: "Email", href: "mailto:contact@hadi.rocks", icon: "mail", wide: false },
     ContactLink { label: "Signal", href: "https://signal.me/#eu/Li5oLbM3sx28t_UTMs31C4euBL6At56NU4YwcPdLbLMuryuXdGpJTqebgxHRpE89", icon: "signal", wide: true },
-    ContactLink { label: "Book a meeting", href: "https://cal.com/hadi-osmani", icon: "calendar", wide: true },
+    ContactLink { label: "Github", href: "https://github.com/x7lex", icon: "github", wide: true },
 ];
 
