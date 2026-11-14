@@ -59,7 +59,7 @@ pub const EDUCATION: &[Education] = &[
     Education {
         school: "Carleton University",
         program: "Computer Science (Honours)",
-        details: &["School of Computer Science"],
+        details: &["Cybersecurity Stream"],
         years: "Year 1",
     },
     Education {
@@ -77,27 +77,27 @@ pub const EDUCATION: &[Education] = &[
 
 pub const PROJECTS: &[Project] = &[
     Project {
-        name: "Guardia",
-        tag: "Hackathon",
+        name: "PyDE",
+        tag: "",
         details: &[
-            "Python (LIEF & Capstone)",
-            "Flags possible malware using static analysis",
+            "Rust & WebAssembly",
+            "Python IDE made using Rust, currently in development",
+        ],
+    },
+    Project {
+        name: "Guardia",
+        tag: "HACK THE HILL 3",
+        details: &[
+            "Python",
+            "Flags possible malware using static analysis & decompilation",
         ],
     },
     Project {
         name: "Astraeus",
-        tag: "Contributed",
-        details: &[
-            "Rust + zstd",
-            "Built a compressed file system for persistent save/load",
-        ],
-    },
-    Project {
-        name: "Botcore",
         tag: "",
         details: &[
-            "Python (Discord, Cogs, Logging)",
-            "A ready-made base for building custom Discord bots",
+            "Rust + ZSTD",
+            "Built a custom file system for persistent save/load, using data compression",
         ],
     },
 ];
