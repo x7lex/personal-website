@@ -5,6 +5,8 @@ pub struct Profile {
     pub name: &'static str,
     pub location: &'static str,
     pub characteristics: &'static str,
+    /// Opens in the browser's own PDF viewer, which has its own download button
+    pub resume: &'static str,
     pub tagline: &'static str,
     pub greeting: &'static str,
     pub readme_title: &'static str,
@@ -49,6 +51,7 @@ pub const PROFILE: Profile = Profile {
     name: "Hadi Osmani",
     location: "Ottawa, Ontario, Canada",
     characteristics: "he/him · 18 years old",
+    resume: "/assets/resume.pdf",
     tagline: "Software Engineering Intern at Daybook Health",
     greeting: "👋 I'm Hadi, a tech enthusiast from Canada 🇨🇦",
     readme_title: "hadirocks/README.md",

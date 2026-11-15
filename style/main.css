@@ -90,6 +90,31 @@ a { color: inherit; }
 
 .meta { color: var(--secondary); font-size: 0.9rem; line-height: 1.6; }
 
+/* "View resume" link under the characteristics line */
+.resume a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.resume a:hover { color: var(--text); }
+
+/* Underline only the words; the arrow is a separate flex item and would get its own line */
+.resume a:hover .label { text-decoration: underline; text-underline-offset: 3px; }
+
+.resume a:focus-visible { outline: 2px solid var(--secondary); outline-offset: 2px; }
+
+.resume .go {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.85em;
+  transition: transform 0.15s ease;
+}
+
+.resume a:hover .go { transform: translate(2px, -2px); }
+
 .tagline { font-size: 0.85rem; color: var(--secondary); margin-top: 4px; }
 
 
@@ -329,7 +354,7 @@ a { color: inherit; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .button, .langs-bar span, .contact .go { transition: none; }
+  .button, .langs-bar span, .contact .go, .resume a, .resume .go { transition: none; }
 }
 
 .contact .card-title { font-size: 1.15rem; }
