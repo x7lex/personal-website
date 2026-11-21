@@ -51,7 +51,7 @@ pub const PROFILE: Profile = Profile {
     name: "Hadi Osmani",
     location: "Ottawa, Ontario, Canada",
     characteristics: "he/him · 18 years old",
-    resume: "/assets/resume.pdf",
+    resume: "/assets/hadiosmani.pdf",
     tagline: "Software Engineering Intern at Daybook Health",
     greeting: "👋 I'm Hadi, a tech enthusiast from Canada 🇨🇦",
     readme_title: "hadirocks/README.md",
